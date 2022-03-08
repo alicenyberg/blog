@@ -20,13 +20,10 @@ class DashboardController extends Controller
         return view('dashboard', [
             'user' => $user
         ]);
-<<<<<<< HEAD
-=======
     }
 
     public function tasks()
     {
         return $this->hasMany(Task::class);
->>>>>>> 732ba85a6113e710ddaa2a805850d92434402f8e
     }
 }
