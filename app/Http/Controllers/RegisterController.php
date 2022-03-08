@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class RegisterController extends Controller
 {
     /**
@@ -24,6 +25,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect('/index');
+        return redirect('dashboard');
     }
 }
