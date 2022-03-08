@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index')->name('login')->middleware('guest');
+Route::view('/', 'index')->name('login');
 Route::post('login', LoginController::class);
 Route::get('logout', LogoutController::class);
 Route::post('register', RegisterController::class);
-Route::get('dashboard', DashboardController::class)->middleware('auth');
+Route::get('dashboard', DashboardController::class);
