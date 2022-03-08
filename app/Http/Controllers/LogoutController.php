@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class LogoutController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,16 +14,10 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
-    {
-        $user = Auth::user();
+    { {
+            Auth::logout();
 
-        return view('dashboard', [
-            'user' => $user
-        ]);
-    }
-
-    public function tasks()
-    {
-        return $this->hasMany(Task::class);
+            return redirect('/');
+        }
     }
 }
