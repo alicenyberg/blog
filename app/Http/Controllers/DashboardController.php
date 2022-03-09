@@ -21,9 +21,4 @@ class DashboardController extends Controller
             'user' => $user
         ]);
     }
-
-    public function tasks()
-    {
-        return $this->hasMany(Task::class);
-    }
 }
