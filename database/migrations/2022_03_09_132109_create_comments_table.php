@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->timestamps();
+            $table->text('content');
+            $table->integer('likes');
         });
     }
 
