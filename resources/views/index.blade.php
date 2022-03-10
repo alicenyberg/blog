@@ -26,6 +26,11 @@
     </div>
 
     <!-- login -->
+    @if ($errors->any())
+        <p>
+            <u>{{ $errors->first() }}</u>
+        </p>
+    @endif
     <form action="/login" method="post">
         @csrf
         <div>

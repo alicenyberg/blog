@@ -19,6 +19,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect('dashboard');
         }
-        return back()->withErrors('Please try again!');
+        return back()->withErrors('The provided credentials do not match our records!');
     }
 }
