@@ -15,21 +15,12 @@
     <img src="{{url('/images/IMG_3577.jpg')}}" alt="Image" width="50%" />
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-    <!-- comment section here -->
-    <div class="comment-section">
-        <h3>Add a comment here</h3>
-        <form>
-            <label for="comment"></label>
-            <textarea type="text" name="comment" id="comment"></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
 
     <!-- login -->
     @if ($errors->any())
-        <p>
-            <u>{{ $errors->first() }}</u>
-        </p>
+    <p>
+        <u>{{ $errors->first() }}</u>
+    </p>
     @endif
     <form action="/login" method="post">
         @csrf
