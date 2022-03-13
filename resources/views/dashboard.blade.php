@@ -23,6 +23,7 @@
                 {{ $user->name }}:
                 {{ $comment->content }}
             </p>
+            <button type="submit">Like</button>
         </li>
         @endforeach
     </ul>
