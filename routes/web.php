@@ -20,11 +20,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::view('/', 'index')->name('login', 'register');
+Route::view('/', 'index')->name('login');
+Route::view('/register', 'register');
 Route::post('login', LoginController::class);
 Route::get('logout', LogoutController::class);
 Route::post('register', RegisterController::class);
-Route::get('dashboard', DashboardController::class);
+Route::get('dashboard', DashboardController::class)->middleware('auth');
 Route::post('comments', CommentController::class)->middleware('auth');
 Route::post('likes', LikesController::class)->name('like.comment');
 
