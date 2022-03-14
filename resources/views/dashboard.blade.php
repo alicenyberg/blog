@@ -25,6 +25,8 @@
             </p>
             <form action="{{ route('like.comment') }}" method="POST">
                 @csrf
+                <input type="hidden" name="true" value="true" id="true" />
+                <label for="true"></label>
                 <button type="submit">Like</button>
             </form>
         </li>

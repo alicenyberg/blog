@@ -19,7 +19,7 @@ class LikesController extends Controller
         $this->validate($request, []);
 
         $likes = new Likes();
-        $likes->liked = $request->input('liked');
+        $likes->liked = $request->input('true');
         $likes->user_id = Auth::id();
         $likes->save();
     }
