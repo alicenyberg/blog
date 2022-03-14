@@ -66,26 +66,32 @@
         </div>
         <button type="submit">Login</button>
     </form>
-    {{-- <p>No account? <a href="register">Sign up here!</p> --}}
+    <button  class="close">test</button>
 
-    <!-- register -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Login') }}</div>
+                    <form action="/login" method="post">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input class="form-control" name="email" id="email" type="email" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input class="form-control" name="password" id="password" type="password" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- <form action="/register" method="post">
-        {{-- @csrf --}}
-        <div>
-            <label for="name">Name</label>
-            <input name="name" id="name" type="text" />
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input name="email" id="email" type="email" />
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input name="password" id="password" type="password" />
-        </div>
-        <button type="submit">Register</button>
-    </form> -->
+
+    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
