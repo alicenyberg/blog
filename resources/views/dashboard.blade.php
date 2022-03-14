@@ -23,7 +23,10 @@
                 {{ $user->name }}:
                 {{ $comment->content }}
             </p>
-            <button type="submit">Like</button>
+            <form action="{{ route('like.comment') }}" method="POST">
+                @csrf
+                <button type="submit">Like</button>
+            </form>
         </li>
         @endforeach
     </ul>
