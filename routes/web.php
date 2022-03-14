@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LikesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -25,6 +26,7 @@ Route::get('logout', LogoutController::class);
 Route::post('register', RegisterController::class);
 Route::get('dashboard', DashboardController::class);
 Route::post('comments', CommentController::class)->middleware('auth');
+Route::post('likes', LikesController::class)->name('like.comment');
 
 // Auth::routes();
 

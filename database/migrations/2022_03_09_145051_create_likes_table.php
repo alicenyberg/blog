@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('comment_id');
-            $table->boolean('liked')->default(0);
+            $table->boolean('liked');
             $table->timestamps();
         });
     }
