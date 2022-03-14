@@ -26,6 +26,6 @@ Route::post('register', RegisterController::class);
 Route::get('dashboard', DashboardController::class);
 Route::post('comments', CommentController::class)->middleware('auth');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
