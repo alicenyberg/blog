@@ -23,9 +23,9 @@
                 {{ $user->name }}:
                 {{ $comment->content }}
             </p>
-            <form action="{{ route('like.comment') }}" method="POST">
+            <form action="{{ route('like.comment', $comment) }}" method="POST">
                 @csrf
-                <input type="hidden" name="true" value="true" id="true" />
+                <input type="hidden" name="true" value=0 id="true" />
                 <label for="true"></label>
                 <button type="submit">Like</button>
             </form>
