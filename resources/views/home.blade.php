@@ -23,18 +23,6 @@
                         <textarea type="text" name="content" id="content"></textarea>
                         <button type="submit">Submit</button>
                     </form>
-
-                    {{-- <ul>
-                        @foreach ($user->comments as $comment)
-                        <li>
-                            <p>
-                                {{ $user->name }}:
-                    {{ $comment->content }}
-                    </p>
-                    <button type="submit">Like</button>
-                    </li>
-                    @endforeach
-                    </ul> --}}
                 </div>
             </div>
         </div>
