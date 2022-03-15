@@ -18,7 +18,6 @@
     <ul>
         @foreach ($comments as $comment)
         <li>
-
             <p>
                 {{ $comment->user->name }}:
                 {{ $comment->content }}
@@ -32,5 +31,4 @@
         </li>
         @endforeach
     </ul>
-
 </div>
