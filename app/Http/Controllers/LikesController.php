@@ -20,6 +20,8 @@ class LikesController extends Controller
         // $this->validate($request, []);
 
         $checkIfLiked = Likes::where('user_id', auth()->user()->id)->where('comment_id', $comment->id)->first();
+        // $countLikes = Likes::where('comment_id', auth()->user()->id)->where('comment_id', $comment->id)->first();
+
         // $countLikes = Likes::all();
 
         // dd($checkIfLiked);

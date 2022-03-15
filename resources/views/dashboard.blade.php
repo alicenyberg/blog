@@ -17,8 +17,9 @@
     </form>
 
     <ul>
-        @foreach ($user->comments as $comment)
+        @foreach ($comments as $comment)
         <li>
+
             <p>
                 {{ $user->name }}:
                 {{ $comment->content }}
@@ -27,7 +28,7 @@
                 @csrf
                 <input type="hidden" name="true" id="true" />
                 <label for="true"></label>
-                <button type="submit">Like</button>
+                <div><button type="submit">Like</button><p>{{$comment->likes->count()}} Likes</p></div>
             </form>
         </li>
         @endforeach
