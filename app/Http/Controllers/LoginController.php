@@ -13,6 +13,10 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        return view('login');
+    }
     public function __invoke(Request $request)
     {
         $credentials = $request->only(['email', 'password']);

@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Auth;
 Route::view('/', 'index')->name('login');
 Route::view('/register', 'register');
 Route::post('login', LoginController::class);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('logout', LogoutController::class);
 Route::post('register', RegisterController::class);
 Route::get('dashboard', DashboardController::class)->middleware('auth');

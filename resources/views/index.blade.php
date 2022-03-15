@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="">Blog</a>
@@ -26,7 +25,7 @@
                 <div class="navbar-nav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="">Login</a>
+                            <a class="nav-link" href="login">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="register">Sign Up</a>
@@ -40,56 +39,23 @@
 
     <!-- blog post here -->
 
-    <img src="{{url('/images/IMG_3577.jpg')}}" alt="Image" width="50%" />
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-    <h3>To read or add comments please login</h3>
-    <!-- login -->
-
-    @if ($errors->any())
-    <div class="alert alert-danger" role="alert">
-        <p>
-            <u>{{ $errors->first() }}</u>
-        </p>
-    </div>
-
-    @endif
-    <form action="/login" method="post">
-        @csrf
-        <div>
-            <label for="email">Email</label>
-            <input name="email" id="email" type="email" />
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input name="password" id="password" type="password" />
-        </div>
-        <button type="submit">Login</button>
-    </form>
-    <button  class="close">test</button>
-
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
-                    <form action="/login" method="post">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input class="form-control" name="email" id="email" type="email" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input class="form-control" name="password" id="password" type="password" />
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
+                    <div class="d-flex justify-content-center p-3">
+                        <img src="{{url('/images/IMG_3577.jpg')}}" alt="Image" width="40%" />
+                    </div>
+                    <div class="bg-light border p-3">
+                        <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        <h3>To read or add comments please login</h3>
+                        {{-- <button  class="close">test</button> --}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
