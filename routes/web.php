@@ -29,7 +29,7 @@ Route::get('logout', LogoutController::class);
 Route::post('register', RegisterController::class);
 Route::get('dashboard', DashboardController::class)->middleware('auth');
 Route::post('comments', CommentController::class)->middleware('auth');
-Route::post('{comments}/likes', LikesController::class)->name('like.comment');
+Route::post('/c/{comment}/like', LikesController::class)->name('like.comment');
 
 // Auth::routes();
 

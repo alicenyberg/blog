@@ -25,12 +25,13 @@
             </p>
             <form action="{{ route('like.comment', $comment) }}" method="POST">
                 @csrf
-                <input type="hidden" name="true" value=0 id="true" />
+                <input type="hidden" name="true" id="true" />
                 <label for="true"></label>
                 <button type="submit">Like</button>
             </form>
         </li>
         @endforeach
+        {{-- <p>{{$countLikes->count()}}</p> --}}
     </ul>
 
 </div>

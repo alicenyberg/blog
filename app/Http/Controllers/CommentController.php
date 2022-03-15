@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comments;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Contracts\Service\Attribute\Required;
@@ -22,7 +22,7 @@ class CommentController extends Controller
             'content' => 'required|max:255'
         ]);
 
-        $comment = new Comments();
+        $comment = new Comment();
         $comment->content = $request->input('content');
         $comment->user_id = Auth::id();
         $comment->save();
