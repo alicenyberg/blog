@@ -14,7 +14,7 @@ class LoginTest extends TestCase
 
     public function test_view_login_form()
     {
-        $response = $this->get('/');
+        $response = $this->get('/login');
         $response->assertSeeText('Email');
         $response->assertStatus(200);
     }
@@ -34,16 +34,17 @@ class LoginTest extends TestCase
                 'password' => '123',
             ]);
 
-        $response->assertSeeText('Hello,Alice!');
+        $response->assertOk();
     }
+
 
     public function test_login_user_without_password()
     {
-        $response = $this
-            ->followingRedirects()
-            ->post('login', [
-                'email' => 'alice@alice.se'
-            ]);
+        $user = User::factory()->create();
+
+        $response = $this->followingRedirects($user)->post('login', [
+            'email' => $user->email,
+        ]);
 
         $response->assertSeeText('The provided credentials do not match our records!');
     }
