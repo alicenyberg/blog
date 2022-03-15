@@ -14,9 +14,9 @@ class LogoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
-    { {
+    {
+        {
             Auth::logout();
-
             return redirect('/');
         }
     }
