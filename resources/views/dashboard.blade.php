@@ -21,7 +21,7 @@
         <li>
 
             <p>
-                {{ $user->name }}:
+                {{ $comment->user->name }}:
                 {{ $comment->content }}
             </p>
             <form action="{{ route('like.comment', $comment) }}" method="POST">
