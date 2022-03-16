@@ -15,7 +15,7 @@ This is a laravel project! Here you can make some comments on a blog post(ish) a
 
 
 
-Code review written by [Patrik Staaf](https://github.com/patrikstaaf) & [Theo Sandell](https://github.com/theo0165).
+# Code review written by [Patrik Staaf](https://github.com/patrikstaaf) & [Theo Sandell](https://github.com/theo0165).
 
 1. `LoginController:16` Instead of 2 methods, create a separate invokable controller for show login form
 2. `LogoutController:18-21` Too many curly brackets
