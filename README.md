@@ -8,7 +8,7 @@ This is a laravel project! Here you can make some comments on a blog post(ish) a
 
 1. You can clone this repo and open it with vs code.
 2. Clone the project and set up your DB. 
-3. Run: php artisan serve, php artisan migrate:fresh --seed to get our DB.
+3. Run: php artisan serve, php artisan migrate to get our DB.
 4. Visit the localhost in your browser.
 5. Sign up, login and start liking comments! 
 
