@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use App\Models\User;
@@ -19,19 +21,17 @@ class CreateAccountTest extends TestCase
     }
     public function test_register_user()
     {
-        $user = new User();
-
-        $user->name = 'Alice';
-        $user->email = 'alice@alice.se';
-        $user->passowrd = '123';
-
-        $register = $this
+        $request = $this
             ->followingRedirects()
             ->post('register', [
-                'name' => "$user->name",
-                'email' => "$user->email",
-                'password' => "$user->password",
+                'name' => 'user',
+                'email' => 'example@yrgo.se',
+                'password' => 'password'
             ]);
-        $register->assertSuccessful();
+
+        $this->assertDatabaseHas('users', [
+            'name' => 'user',
+            'email' => 'example@yrgo.se',
+        ]);
     }
 }
