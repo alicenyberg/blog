@@ -17,33 +17,16 @@ class LikesController extends Controller
      */
     public function __invoke(Request $request, Comment $comment)
     {
-        // $this->validate($request, []);
-
         $checkIfLiked = Likes::where('user_id', auth()->user()->id)->where('comment_id', $comment->id)->first();
-        // $countLikes = Likes::where('comment_id', auth()->user()->id)->where('comment_id', $comment->id)->first();
-
-        // $countLikes = Likes::all();
-
-        // dd($checkIfLiked);
-
-        // dd($comment);
 
         if ($checkIfLiked) {
             return back();
-        } else {
-            // $likes = new Likes();
-            // $likes->liked = $request->input(1);
-            // $likes->liked = 1;
-            // $likes->user_id = Auth::id();
-            // $likes->comment_id = $comments->id;
-            // $likes->save();
-
-            $comment->likes()->create([
-                'user_id' => auth()->user()->id,
-                'comment_id' => $comment->id
-            ]);
-
-            return redirect('dashboard');
         }
+        $comment->likes()->create([
+            'user_id' => auth()->user()->id,
+            'comment_id' => $comment->id
+        ]);
+
+        return redirect('dashboard');
     }
 }
