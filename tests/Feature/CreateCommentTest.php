@@ -13,12 +13,12 @@ class CreateCommentTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_create_comment()
+    public function test_create_comment_as_user()
     {
         $user = new User();
         $user->name = 'Mr Robot';
         $user->email = 'example@yrgo.se';
-        $user->password = Hash::make('123');
+        $user->password = '123';
         $user->save();
 
         $this
@@ -28,5 +28,14 @@ class CreateCommentTest extends TestCase
             ]);
 
         $this->assertDatabaseHas('comments', ['content' => 'Finish writing this test']);
+    }
+
+    public function test_create_comment_as_guest()
+    {
+        $this->post('comments', [
+                'content' => 'Finish writing this test'
+            ]);
+
+        $this->assertDatabaseMissing('comments', ['content' => 'Finish writing this test']);
     }
 }

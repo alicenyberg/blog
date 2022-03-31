@@ -12,7 +12,7 @@ use Tests\TestCase;
 class DashboardTest extends TestCase
 {
     use RefreshDatabase;
-    public function test_view_dashboard()
+    public function test_view_dashboard_as_signed_in()
     {
         $user = new User();
         $user->name = 'Mr Robot';
@@ -20,18 +20,14 @@ class DashboardTest extends TestCase
         $user->password = Hash::make('123');
         $user->save();
 
-
-        $response = $this->actingAs($user)
-            ->get('dashboard');
+        $response = $this->actingAs($user)->get('dashboard');
         $response->assertSeeText('Hello, Mr Robot!');
         $response->assertStatus(200);
     }
 
     public function test_view_dashboard_as_not_signed_in()
     {
-
-        $response = $this->assertGuest()
-            ->get('dashboard');
+        $response = $this->assertGuest()->get('dashboard');
         $response->assertStatus(302);
     }
 }
